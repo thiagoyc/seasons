@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cplsdxrbkhhty"
-path="res://.godot/imported/Decorations_Summer.png-a8cba9f5c755378cab4c7d4b13d70c70.ctex"
+uid="uid://ebjogt1k2qbg"
+path="res://.godot/imported/Ground_Summer.png-d8320171d9a0edea2ac84b412ca78cfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seasons pack/Summer - spring/Decorations/Decorations_Summer.png"
-dest_files=["res://.godot/imported/Decorations_Summer.png-a8cba9f5c755378cab4c7d4b13d70c70.ctex"]
+source_file="res://assets/Seasons pack/Summer/Ground/Ground_Summer.png"
+dest_files=["res://.godot/imported/Ground_Summer.png-d8320171d9a0edea2ac84b412ca78cfc.ctex"]
 
 [params]
 
