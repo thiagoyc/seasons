@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c80hqa3p04ck3"
-path="res://.godot/imported/Trees_Autumn.png-60e6d71c5449a5d62c745546a7b60e0c.ctex"
+uid="uid://kn5qdsvqfjwh"
+path="res://.godot/imported/Trees_Spring.png-ac50a47ee5c56ea5651d4005fd5e4b9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seasons pack/Autumn/Trees/Trees_Autumn.png"
-dest_files=["res://.godot/imported/Trees_Autumn.png-60e6d71c5449a5d62c745546a7b60e0c.ctex"]
+source_file="res://assets/Seasons pack/Spring/Trees/Trees_Spring.png"
+dest_files=["res://.godot/imported/Trees_Spring.png-ac50a47ee5c56ea5651d4005fd5e4b9b.ctex"]
 
 [params]
 
