@@ -27,6 +27,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("cast") and is_on_floor():
 		casting = true
 	
+	# Flip horizontally
+	if not casting:
+		if direction > 0:
+			animated_sprite_2d.flip_h = true
+		elif direction < 0:
+			animated_sprite_2d.flip_h = false
+	
+	# Animations
 	if is_on_floor():
 		if casting:
 			animated_sprite_2d.play("begging")
