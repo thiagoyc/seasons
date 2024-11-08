@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://coldx2el5dn6m"]
+
+[ext_resource type="Texture2D" uid="uid://cnlxlupd7dcup" path="res://assets/Seasons Icons/hairymnstr_seasons_winter.svg" id="1_p53yv"]
+[ext_resource type="Texture2D" uid="uid://cv50y4boo1bt" path="res://assets/Seasons Icons/hairymnstr_seasons_autumn.svg" id="2_bevh0"]
+[ext_resource type="Script" path="res://scripts/season_icons.gd" id="2_p1hra"]
+[ext_resource type="Texture2D" uid="uid://bsqsl2ht01k7y" path="res://assets/Seasons Icons/hairymnstr_seasons_spring.svg" id="3_3p7vb"]
+[ext_resource type="Texture2D" uid="uid://b4nyn454pkkld" path="res://assets/Seasons Icons/hairymnstr_seasons_summer.svg" id="4_q2twb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f260r"]
+bg_color = Color(0.0784314, 0.109804, 0.117647, 1)
+
+[node name="GameBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Seasons Icons" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/Seasons Icons"]
+layout_mode = 0
+offset_right = 275.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f260r")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Seasons Icons/Panel"]
+layout_mode = 0
+offset_right = 275.0
+offset_bottom = 80.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Seasons Icons/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Season 1" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["Seasons"]]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("4_q2twb")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_p1hra")
+
+[node name="Season 2" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["Seasons"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_bevh0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_p1hra")
+
+[node name="Season 3" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["Seasons"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_p53yv")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_p1hra")
+
+[node name="Season 4" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["Seasons"]]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_3p7vb")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_p1hra")

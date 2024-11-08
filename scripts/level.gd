@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var midground: TileMapLayer = $Midground
 
+@onready var game_bar: Control = $"UI Manager/GameBar"
+
 var player_cat
 
 const season_textures = [
@@ -16,6 +18,7 @@ const tree_textures = [
 	"res://assets/Seasons pack/Winter/Trees/Trees_Winter.png",
 	"res://assets/Seasons pack/Spring/Trees/Trees_Spring.png"
 ]
+
 var i = 0
 var last_i = 0
 
@@ -39,7 +42,11 @@ func _process(_delta: float) -> void:
 			(tree_source as TileSetAtlasSource).texture = tree_texture
 		
 		remove_child(midground)
-		add_child(midground)	
+		add_child(midground)
+		
+		var groups = game_bar.get_groups()
+		print(groups)
 	
 func _on_player_cat_cast_done() -> void:
 	i = (i + 1) % 4
+	get_tree().call_group("Seasons", "next_season")
