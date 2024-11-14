@@ -49,4 +49,4 @@ func _process(_delta: float) -> void:
 	
 func _on_player_cat_cast_done() -> void:
 	i = (i + 1) % 4
-	get_tree().call_group("Seasons", "next_season")
+	get_tree().call_group("SeasonAffected", "next_season")
