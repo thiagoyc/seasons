@@ -28,4 +28,4 @@ func _process(delta: float) -> void:
 		texture = new_texture
 		
 func next_season():
-	icon_id = (icon_id + 1) % 4
+	pass

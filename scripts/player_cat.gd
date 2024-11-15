@@ -39,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if casting:
 			animated_sprite_2d.play("begging")
+			EventController.emit_signal("shake_camera")
 		elif direction == 0:
 			animated_sprite_2d.play("sitting")
 		else:
@@ -53,3 +54,4 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "begging":
 		casting = false
 		emit_signal("cast_done")
+		EventController.emit_signal("stabilize_camera")
