@@ -28,7 +28,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if i != last_i:
-		print(i)
 		last_i = i
 		
 		var floor_texture = load(season_textures[i])
@@ -41,11 +40,20 @@ func _process(_delta: float) -> void:
 		if tree_source is TileSetAtlasSource:
 			(tree_source as TileSetAtlasSource).texture = tree_texture
 		
+		var water_cells_array = midground.get_used_cells_by_id(3)
+		var ice_cells_array = midground.get_used_cells_by_id(4)
+		
+		if i == 2:
+			for cell in water_cells_array:
+				var atlas_coords = midground.get_cell_atlas_coords(cell)
+				midground.set_cell(cell, 4, atlas_coords)
+		else:
+			for cell in ice_cells_array:
+				var atlas_coords = midground.get_cell_atlas_coords(cell)
+				midground.set_cell(cell, 3, atlas_coords)
+			
 		remove_child(midground)
 		add_child(midground)
-		
-		var groups = game_bar.get_groups()
-		print(groups)
 	
 func _on_player_cat_cast_done() -> void:
 	i = (i + 1) % 4
