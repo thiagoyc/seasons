@@ -49,11 +49,6 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("jumping")
 	
 	move_and_slide()
-	
-	#for i in get_slide_collision_count():
-		#var coll = get_slide_collision(i)
-		#if coll.get_collider() is RigidBody2D:
-			#coll.get_collider().apply_central_force(-coll.get_normal() * PUSH_FORCE)
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
