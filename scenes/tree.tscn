@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://bxnmkeh37e3av"]
 
-[ext_resource type="Texture2D" uid="uid://jg1wxdv7peig" path="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png" id="1_hefi0"]
+[ext_resource type="Texture2D" uid="uid://c3e06g8u83x5w" path="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png" id="1_hefi0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h0o13"]
 texture = ExtResource("1_hefi0")
@@ -35,7 +35,7 @@ texture = ExtResource("1_hefi0")
 [sub_resource type="TileSet" id="TileSet_v1pyu"]
 sources/0 = SubResource("TileSetAtlasSource_h0o13")
 
-[node name="Tree" type="Node2D" groups=["SeasonAffected"]]
+[node name="Tree" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-8, 7)

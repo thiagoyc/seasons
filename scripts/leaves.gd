@@ -12,14 +12,6 @@ var can_delete = false
 var burn_duration: float = 1.0
 var burn = true
 
-var season_index = 0
-var seasons = [
-	"summer",
-	"autumn",
-	"winter",
-	"spring"
-]
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,9 +23,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 	
-	if seasons[season_index] == "summer":
+	if Globals.seasons[Globals.seasons_int] == "Summer":
 		start_burning()
-	elif seasons[season_index] == "autumn":
+	elif Globals.seasons[Globals.seasons_int] == "Autumn":
 		if can_delete: queue_free()
 	
 	move_and_slide()
@@ -77,7 +69,3 @@ func set_on_fire(object: Node2D):
 	
 	await get_tree().create_timer(burn_duration).timeout
 	queue_free()
-
-
-func next_season():
-	season_index = (season_index + 1) % 4

@@ -122,7 +122,7 @@ height = 20.0
 radius = 5.0
 height = 14.0
 
-[node name="IceBlock" type="CharacterBody2D" groups=["SeasonAffected"]]
+[node name="IceBlock" type="CharacterBody2D"]
 script = ExtResource("2_1oggt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

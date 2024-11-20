@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://drorroyo8xc03"]
+[gd_scene load_steps=14 format=3 uid="uid://drorroyo8xc03"]
 
 [ext_resource type="Texture2D" uid="uid://bjehthyr0au7p" path="res://assets/Pixel Asset Pack Jam _Autumn/sprites/squirrel animation_16x16_pack.png" id="1_q648d"]
 [ext_resource type="PackedScene" uid="uid://o20r6v53eajm" path="res://scenes/interactable.tscn" id="2_rpi67"]
 [ext_resource type="PackedScene" uid="uid://bdfp8uihod6mt" path="res://scenes/speech_bubble.tscn" id="3_in8mm"]
 [ext_resource type="Texture2D" uid="uid://cpuj3ya1lrqm7" path="res://assets/food_items16x16.png" id="4_hkbxp"]
+[ext_resource type="Texture2D" uid="uid://bt154ics8jx1c" path="res://assets/Platformer Art Complete Pack/Base pack/Items/mushroomBrown.png" id="5_uweej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0cfs"]
 atlas = ExtResource("1_q648d")
@@ -114,8 +115,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Mushroom" type="Sprite2D" parent="SpeechBubble"]
-position = Vector2(5, -5)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_hkbxp")
-region_enabled = true
+position = Vector2(5, -7)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_uweej")
 region_rect = Rect2(64, 0, 16, 16)
