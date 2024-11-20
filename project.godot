@@ -23,6 +23,7 @@ EventController="*res://scripts/event_controller.gd"
 
 SeasonAffected=""
 Player=""
+Flamable=""
 
 [input]
 

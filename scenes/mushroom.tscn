@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1xpsw2pgqi02"]
+
+[ext_resource type="Texture2D" uid="uid://bt154ics8jx1c" path="res://assets/Platformer Art Complete Pack/Base pack/Items/mushroomBrown.png" id="1_8ytxa"]
+
+[node name="Mushroom" type="Node2D"]
+
+[node name="MushroomBrown" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ytxa")
