@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3e06g8u83x5w"
-path="res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"
+uid="uid://cmbkw6hcrejra"
+path="res://.godot/imported/tilemap_16x16.png-5b3f18cbf09dc95910ed0b9618e3c608.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png"
-dest_files=["res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"]
+source_file="res://assets/Pixel Asset Pack Jam _Autumn/sprites/tilemap_16x16.png"
+dest_files=["res://.godot/imported/tilemap_16x16.png-5b3f18cbf09dc95910ed0b9618e3c608.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3e06g8u83x5w"
-path="res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"
+uid="uid://cpuj3ya1lrqm7"
+path="res://.godot/imported/food_items16x16.png-1fb2fd094f07b9275c42fc67c83bcdf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png"
-dest_files=["res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"]
+source_file="res://assets/food_items16x16.png"
+dest_files=["res://.godot/imported/food_items16x16.png-1fb2fd094f07b9275c42fc67c83bcdf3.ctex"]
 
 [params]
 

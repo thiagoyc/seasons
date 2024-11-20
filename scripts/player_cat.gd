@@ -5,8 +5,13 @@ extends CharacterBody2D
 const SPEED = 60.0
 const JUMP_VELOCITY = -100.0
 
-var casting = false
+var is_dead
+var casting
 signal cast_done()
+
+func _ready():
+	is_dead = false
+	casting = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

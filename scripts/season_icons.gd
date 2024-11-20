@@ -7,7 +7,7 @@ const season_icons = [
 	"res://assets/Seasons Icons/hairymnstr_seasons_spring.svg"
 ]
 
-var icon_id
+var icon_id = 0
 var last_id
 
 # Called when the node enters the scene tree for the first time.
