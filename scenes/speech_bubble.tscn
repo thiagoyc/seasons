@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdfp8uihod6mt"]
+
+[ext_resource type="Texture2D" uid="uid://djgigbl1ex2ha" path="res://assets/SpeechBubble.png" id="1_4cxau"]
+
+[node name="SpeechBubble" type="Sprite2D"]
+position = Vector2(0, 5)
+texture = ExtResource("1_4cxau")

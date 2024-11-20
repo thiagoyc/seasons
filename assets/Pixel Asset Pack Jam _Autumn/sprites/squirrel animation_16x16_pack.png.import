@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3e06g8u83x5w"
-path="res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"
+uid="uid://bjehthyr0au7p"
+path="res://.godot/imported/squirrel animation_16x16_pack.png-1c8304c3cfcb2aa56f74bf5b320aea38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png"
-dest_files=["res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"]
+source_file="res://assets/Pixel Asset Pack Jam _Autumn/sprites/squirrel animation_16x16_pack.png"
+dest_files=["res://.godot/imported/squirrel animation_16x16_pack.png-1c8304c3cfcb2aa56f74bf5b320aea38.ctex"]
 
 [params]
 
