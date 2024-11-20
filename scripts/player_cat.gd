@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-#var leaves: Node = null
 
 const SPEED = 60.0
 const JUMP_VELOCITY = -100.0
@@ -55,15 +54,6 @@ func _physics_process(delta: float) -> void:
 		#var coll = get_slide_collision(i)
 		#if coll.get_collider() is RigidBody2D:
 			#coll.get_collider().apply_central_force(-coll.get_normal() * PUSH_FORCE)
-	#
-	#if Input.is_action_just_pressed("pull") and leaves:
-		#leaves.connect_to_player(self)
-	#elif Input.is_action_just_released("pull") and leaves:
-		#leaves.disconnect_from_player()
-
-
-#func interact_with_leaves(leaves_node: Node):
-	#leaves = leaves_node  # Store the reference to the leaves
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
