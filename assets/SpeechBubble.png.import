@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3e06g8u83x5w"
-path="res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"
+uid="uid://djgigbl1ex2ha"
+path="res://.godot/imported/SpeechBubble.png-be37a5935304cea87af61b48a77a56f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png"
-dest_files=["res://.godot/imported/Trees_Summer.png-6dc4ab1588a1908a5e54cc07f84e7a2e.ctex"]
+source_file="res://assets/SpeechBubble.png"
+dest_files=["res://.godot/imported/SpeechBubble.png-be37a5935304cea87af61b48a77a56f3.ctex"]
 
 [params]
 

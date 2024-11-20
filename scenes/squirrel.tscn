@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://drorroyo8xc03"]
+
+[ext_resource type="Texture2D" uid="uid://bjehthyr0au7p" path="res://assets/Pixel Asset Pack Jam _Autumn/sprites/squirrel animation_16x16_pack.png" id="1_q648d"]
+[ext_resource type="PackedScene" uid="uid://o20r6v53eajm" path="res://scenes/interactable.tscn" id="2_rpi67"]
+[ext_resource type="PackedScene" uid="uid://bdfp8uihod6mt" path="res://scenes/speech_bubble.tscn" id="3_in8mm"]
+[ext_resource type="Texture2D" uid="uid://cpuj3ya1lrqm7" path="res://assets/food_items16x16.png" id="4_hkbxp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0cfs"]
+atlas = ExtResource("1_q648d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74go8"]
+atlas = ExtResource("1_q648d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcj66"]
+atlas = ExtResource("1_q648d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwe1m"]
+atlas = ExtResource("1_q648d")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afe6u"]
+atlas = ExtResource("1_q648d")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc54e"]
+atlas = ExtResource("1_q648d")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwd86"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0cfs")
+}],
+"loop": true,
+"name": &"holding",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74go8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcj66")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwe1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afe6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc54e")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_migfa"]
+radius = 7.0
+
+[node name="Squirrel" type="CharacterBody2D"]
+collision_layer = 256
+collision_mask = 256
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_hwd86")
+animation = &"holding"
+autoplay = "idle"
+frame_progress = 0.490754
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_migfa")
+
+[node name="Interactable" parent="." instance=ExtResource("2_rpi67")]
+position = Vector2(0, -10)
+scale = Vector2(1.56, 1)
+label = "para interagir"
+
+[node name="SpeechBubble" parent="." instance=ExtResource("3_in8mm")]
+position = Vector2(0, -23)
+
+[node name="Label" type="Label" parent="SpeechBubble"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_top = -8.0
+offset_right = -3.0
+offset_bottom = 15.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "⇆"
+horizontal_alignment = 1
+
+[node name="Apple" type="Sprite2D" parent="SpeechBubble"]
+position = Vector2(-5, -5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_hkbxp")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Mushroom" type="Sprite2D" parent="SpeechBubble"]
+position = Vector2(5, -5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_hkbxp")
+region_enabled = true
+region_rect = Rect2(64, 0, 16, 16)

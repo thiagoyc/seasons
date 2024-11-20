@@ -121,7 +121,6 @@ layout_mode = 2
 texture = ExtResource("6_x0752")
 expand_mode = 1
 stretch_mode = 5
-script = ExtResource("2_p1hra")
 
 [node name="Life counter" type="Label" parent="MarginContainer/Seasons Icons/Panel2/MarginContainer/HBoxContainer"]
 layout_mode = 2
