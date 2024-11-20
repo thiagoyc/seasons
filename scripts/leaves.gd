@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var fire_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 1000.0
+const SPEED = 1500.0
 
 signal leaves_fall()
 var initial_position

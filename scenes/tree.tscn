@@ -7,7 +7,7 @@
 [node name="Tree" type="Node2D" groups=["SeasonAffected"]]
 script = ExtResource("1_g8riv")
 
-[node name="Leaves" parent="." instance=ExtResource("3_4lfet")]
+[node name="Leaves" parent="." groups=["SeasonAffected"] instance=ExtResource("3_4lfet")]
 visible = false
 position = Vector2(10, 0)
 scale = Vector2(1.3, 1.3)

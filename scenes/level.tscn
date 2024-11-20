@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bl6pd72xku0jf"]
+[gd_scene load_steps=34 format=4 uid="uid://bl6pd72xku0jf"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cb4yq"]
 [ext_resource type="PackedScene" uid="uid://dlkshbyhqimfb" path="res://scenes/player_cat.tscn" id="1_ckk63"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://scripts/interaction_ui.gd" id="11_a0xcn"]
 [ext_resource type="PackedScene" uid="uid://b3qpq0d4k0son" path="res://scenes/log.tscn" id="12_hd2db"]
 [ext_resource type="PackedScene" uid="uid://bxnmkeh37e3av" path="res://scenes/tree.tscn" id="13_2ok62"]
-[ext_resource type="PackedScene" uid="uid://b3yuvcpqpgxk7" path="res://scenes/leaves.tscn" id="14_5im2n"]
 [ext_resource type="PackedScene" uid="uid://c1xpsw2pgqi02" path="res://scenes/mushroom.tscn" id="15_ifyvv"]
 [ext_resource type="PackedScene" uid="uid://00quo2voifxq" path="res://scenes/killzone.tscn" id="15_n0xte"]
 [ext_resource type="PackedScene" uid="uid://cleo45mnjigi8" path="res://scenes/ice_block.tscn" id="16_2wfs4"]
@@ -383,10 +382,6 @@ scale = Vector2(0.23, 0.23)
 
 [node name="Tree" parent="." instance=ExtResource("13_2ok62")]
 position = Vector2(-185, -23)
-
-[node name="Leaves" parent="." instance=ExtResource("14_5im2n")]
-position = Vector2(-100, -4)
-scale = Vector2(1.3, 1.3)
 
 [node name="Mushroom" parent="." instance=ExtResource("15_ifyvv")]
 position = Vector2(-61, 20)
