@@ -2,15 +2,19 @@ extends CharacterBody2D
 
 @onready var fire_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 500.0
+const SPEED = 1000.0
 
-var pushable = true
+signal leaves_fall()
+var initial_position
+var drop = false
+
+var pushable = false
 var push = false
 var direction = 0
 
 var can_delete = false
 var burn_duration: float = 1.0
-var burn = true
+var burn = false
 
 var season_index = 0
 var seasons = [
@@ -21,9 +25,14 @@ var seasons = [
 ]
 
 
+func _ready():
+	initial_position = global_position
+	print("Initial position saved: ", initial_position)
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and drop:
 		velocity += get_gravity() * delta
 	
 	if push:
@@ -31,12 +40,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 	
-	if seasons[season_index] == "summer":
+	if seasons[season_index] == "summer" and drop:
 		start_burning()
-	elif seasons[season_index] == "autumn":
-		if can_delete: queue_free()
+	elif seasons[season_index] == "autumn" and drop:
+		if can_delete:
+			stop_burning()
+			global_position = initial_position
 	
 	move_and_slide()
+
+
+func _on_leaves_fall() -> void:
+	drop = true
+	pushable = true
 
 
 func _on_right_body_entered(body: Node2D) -> void:
@@ -64,9 +80,17 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func start_burning():
+	burn = true
 	can_delete = true
 	fire_sprite.visible = true
 	fire_sprite.play()
+
+
+func stop_burning():
+	burn = false
+	can_delete = false
+	fire_sprite.visible = false
+	fire_sprite.stop()
 
 
 func set_on_fire(object: Node2D):
@@ -76,7 +100,9 @@ func set_on_fire(object: Node2D):
 	push = false
 	
 	await get_tree().create_timer(burn_duration).timeout
-	queue_free()
+	drop = false
+	stop_burning()
+	global_position = initial_position
 
 
 func next_season():
