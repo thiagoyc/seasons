@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://df01y3c1cp77u" path="res://assets/Seasons pack/Palette/BubbleGum16.png" id="2_6gy6u"]
 [ext_resource type="Texture2D" uid="uid://ebjogt1k2qbg" path="res://assets/Seasons pack/Summer/Ground/Ground_Summer.png" id="2_l8g21"]
 [ext_resource type="PackedScene" uid="uid://coldx2el5dn6m" path="res://scenes/game_bar.tscn" id="3_abhtu"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_knots"]
 [ext_resource type="Texture2D" uid="uid://3bvdvbignmyr" path="res://assets/Seasons pack/Miscellaneous/Clouds/Cloud_1.png" id="3_oye1s"]
 [ext_resource type="Texture2D" uid="uid://psgfj50xxp2w" path="res://assets/Seasons pack/Miscellaneous/Clouds/Cloud_2.png" id="4_6jwdy"]
 [ext_resource type="Texture2D" uid="uid://tld1o3618gis" path="res://assets/Seasons pack/Miscellaneous/Clouds/Cloud_3.png" id="5_b7h0x"]
@@ -13,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://6s77id1wiviv" path="res://assets/water.png" id="10_4dx1k"]
 [ext_resource type="Texture2D" uid="uid://d2ru1pslbubwr" path="res://assets/ice.png" id="10_7n23h"]
 [ext_resource type="Script" path="res://scripts/interaction_ui.gd" id="11_a0xcn"]
+[ext_resource type="AudioStream" uid="uid://dcv5pg3wn2ikx" path="res://assets/music/Danosongs-Mars-And-Stars-edited.mp3" id="15_j4w06"]
+[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="15_uitfq"]
 [ext_resource type="PackedScene" uid="uid://b3qpq0d4k0son" path="res://scenes/log.tscn" id="12_hd2db"]
 [ext_resource type="PackedScene" uid="uid://bxnmkeh37e3av" path="res://scenes/tree.tscn" id="13_2ok62"]
 [ext_resource type="PackedScene" uid="uid://c1xpsw2pgqi02" path="res://scenes/mushroom.tscn" id="15_ifyvv"]
@@ -320,6 +323,7 @@ zoom = Vector2(8, 8)
 limit_left = -515
 limit_bottom = 34
 limit_smoothed = true
+script = ExtResource("3_knots")
 
 [node name="Background" type="TileMapLayer" parent="."]
 visible = false
@@ -367,6 +371,13 @@ theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("15_uitfq")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("15_j4w06")
+volume_db = -10.0
+autoplay = true
 [node name="Killzone" parent="." instance=ExtResource("15_n0xte")]
 position = Vector2(-280, 17)
 
