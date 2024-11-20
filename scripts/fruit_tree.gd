@@ -4,7 +4,6 @@ extends Node2D
 @onready var fruit: CharacterBody2D = $Fruit
 @onready var area_2d: Area2D = $Area2D
 
-var texture_id
 var last_id
 
 const textures = [
@@ -15,17 +14,19 @@ const textures = [
 ]
 
 func _ready():
-	texture_id = 0
-	last_id = 0
+	last_id = -1
 
 func _process(_delta: float) -> void:
-	if texture_id != last_id:
-		last_id = texture_id
-		tree.texture = load(textures[texture_id])
+	if last_id != Globals.seasons_int:
+		last_id = Globals.seasons_int
+		tree.texture = load(textures[Globals.seasons_int])
+		
+		if Globals.seasons[Globals.seasons_int] == "Summer":
+			fruit.visible = true
+		else:
+			fruit.visible = false
+			fruit.emit_signal("fruit_back_top")
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and fruit.visible:
 		fruit.emit_signal("fruit_fall")
-
-func next_season():
-	texture_id = (texture_id + 1) % 4

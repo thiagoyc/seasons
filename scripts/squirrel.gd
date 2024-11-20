@@ -48,6 +48,14 @@ func _process(delta: float) -> void:
 			holding_fruit.visible = true
 			interactable_collision.disabled = false
 			activate_animation = false
+	if Globals.seasons[Globals.seasons_int] != "Summer":
+		activate_animation = false
+		interactable_collision.disabled = true
+		holding_fruit.visible = false
+		go_to_fruit = true
+		go_back = true
+		animated_sprite.play("idle")
+		speech_bubble.visible = false
 		
 func _on_fruit_fruit_on_floor() -> void:
 	activate_animation = true

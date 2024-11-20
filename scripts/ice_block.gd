@@ -12,14 +12,6 @@ var direction = 0
 
 var frozen = false
 
-var season_index = 0
-var seasons = [
-	"summer",
-	"autumn",
-	"winter",
-	"spring"
-]
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -37,9 +29,9 @@ func _physics_process(delta: float) -> void:
 		collision.disabled = true
 		velocity = Vector2(0,0)
 	
-	if seasons[season_index] == "winter" and !frozen:
+	if Globals.seasons[Globals.seasons_int] == "Winter" and !frozen:
 		freeze()
-	elif seasons[season_index] != "winter" and frozen:
+	elif Globals.seasons[Globals.seasons_int] != "Winter" and frozen:
 		unfreeze()
 	
 	move_and_slide()
@@ -73,7 +65,3 @@ func unfreeze():
 	frozen = false
 	pushable = false
 	animation.play("Unfreeze")
-
-
-func next_season():
-	season_index = (season_index + 1) % 4
