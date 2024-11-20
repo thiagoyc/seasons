@@ -1,10 +1,10 @@
 extends TextureRect
 
 const season_icons = [
-	"res://assets/Seasons Icons/hairymnstr_seasons_summer.svg",
-	"res://assets/Seasons Icons/hairymnstr_seasons_autumn.svg",
-	"res://assets/Seasons Icons/hairymnstr_seasons_winter.svg",
-	"res://assets/Seasons Icons/hairymnstr_seasons_spring.svg"
+	"res://assets/UI/season/seasons-1.png",
+	"res://assets/UI/season/seasons-2.png",
+	"res://assets/UI/season/seasons-3.png",
+	"res://assets/UI/season/seasons-4.png"
 ]
 
 var icon_id

@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var jumping_sound_fx: AudioStreamPlayer = $Jumping
+@onready var walking_leaves_fx: AudioStreamPlayer = $"walking-leaves"
+@onready var cracking_earthquake: AudioStreamPlayer = $"Cracking-earthquake"
+
 const SPEED = 60.0
 const JUMP_VELOCITY = -100.0
 
@@ -16,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not casting:
 		velocity.y = JUMP_VELOCITY
+		jumping_sound_fx.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -27,7 +32,17 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("cast") and is_on_floor():
 		casting = true
+		cracking_earthquake.play()
 	
+	if is_on_floor() and velocity.x != 0:
+		if walking_leaves_fx.is_playing() == false:
+			walking_leaves_fx.play()
+	else:
+		if walking_leaves_fx.is_playing():
+			walking_leaves_fx.stop()
+
+
+
 	# Flip horizontally
 	if not casting:
 		if direction > 0:
