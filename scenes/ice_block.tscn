@@ -1,0 +1,156 @@
+[gd_scene load_steps=20 format=3 uid="uid://cleo45mnjigi8"]
+
+[ext_resource type="Texture2D" uid="uid://btfdhk74epdmd" path="res://assets/Ice Block/IceCocoon.png" id="1_4lkoj"]
+[ext_resource type="Script" path="res://scripts/ice_block.gd" id="2_1oggt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_widro"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrksk"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y23bs"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0805"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtruh"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1hwr"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg4t4"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk0ej"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4p31"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyrst"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y8n3"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6mms"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sslk4"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1g7c"]
+atlas = ExtResource("1_4lkoj")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dej7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_widro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrksk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y23bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0805")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtruh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1hwr")
+}],
+"loop": false,
+"name": &"Freeze",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg4t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk0ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4p31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyrst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y8n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6mms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sslk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1g7c")
+}],
+"loop": false,
+"name": &"Unfreeze",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7reav"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0yqg"]
+radius = 5.0
+height = 14.0
+
+[node name="IceBlock" type="CharacterBody2D"]
+script = ExtResource("2_1oggt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8dej7")
+animation = &"Freeze"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7reav")
+
+[node name="Left" type="Area2D" parent="."]
+position = Vector2(1, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(-8, 17)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i0yqg")
+
+[node name="Right" type="Area2D" parent="."]
+position = Vector2(10, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(-7, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i0yqg")
+
+[connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]
+[connection signal="body_exited" from="Left" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]
+[connection signal="body_exited" from="Right" to="." method="_on_body_exited"]

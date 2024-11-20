@@ -72,7 +72,7 @@ layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Season 1" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["SeasonAffected"]]
+[node name="Season 1" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("1_3jcai")
@@ -80,7 +80,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_p1hra")
 
-[node name="Season 2" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["SeasonAffected"]]
+[node name="Season 2" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("3_n3108")
@@ -88,7 +88,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_p1hra")
 
-[node name="Season 3" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["SeasonAffected"]]
+[node name="Season 3" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("4_1gg48")
@@ -96,7 +96,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_p1hra")
 
-[node name="Season 4" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer" groups=["SeasonAffected"]]
+[node name="Season 4" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_hsy0y")
@@ -128,13 +128,12 @@ layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Cat head" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel2/MarginContainer/HBoxContainer" groups=["SeasonAffected"]]
+[node name="Cat head" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel2/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_x0752")
 expand_mode = 1
 stretch_mode = 5
-script = ExtResource("2_p1hra")
 
 [node name="Life counter" type="Label" parent="MarginContainer/Seasons Icons/Panel2/MarginContainer/HBoxContainer"]
 layout_mode = 2

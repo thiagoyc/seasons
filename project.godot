@@ -19,11 +19,17 @@ config/icon="res://icon.svg"
 
 EventController="*res://scripts/event_controller.gd"
 AudioManager="*res://scenes/audio_manager.gd"
+Globals="*res://scripts/globals.gd"
+
+[display]
+
+window/size/mode=2
+window/size/initial_position_type=4
 
 [global_group]
 
-SeasonAffected=""
 Player=""
+Flamable=""
 
 [input]
 
