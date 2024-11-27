@@ -1,8 +1,104 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxnmkeh37e3av"]
+[gd_scene load_steps=19 format=3 uid="uid://bxnmkeh37e3av"]
 
 [ext_resource type="Script" path="res://scripts/tree.gd" id="1_g8riv"]
 [ext_resource type="Texture2D" uid="uid://c3e06g8u83x5w" path="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png" id="1_hefi0"]
 [ext_resource type="PackedScene" uid="uid://b3yuvcpqpgxk7" path="res://scenes/leaves.tscn" id="3_4lfet"]
+[ext_resource type="Texture2D" uid="uid://cg4odamraenat" path="res://assets/Tree Growing/TreeGrowing.png" id="4_7xsis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtp6w"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlytg"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pcoy"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjk0k"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6snd"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq86s"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4comk"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51hda"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iihds"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p65y"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv4jd"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msiiw"]
+atlas = ExtResource("4_7xsis")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a74h5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtp6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlytg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pcoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjk0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6snd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq86s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4comk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51hda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iihds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p65y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv4jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msiiw")
+}],
+"loop": false,
+"name": &"Growing",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq8q1"]
+size = Vector2(14, 43)
 
 [node name="Tree" type="Node2D" groups=["SeasonAffected"]]
 script = ExtResource("1_g8riv")
@@ -12,7 +108,29 @@ visible = false
 position = Vector2(10, 0)
 scale = Vector2(1.3, 1.3)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_a74h5")
+animation = &"Growing"
+frame = 11
+frame_progress = 1.0
+
 [node name="Tree" type="Sprite2D" parent="."]
 texture = ExtResource("1_hefi0")
 region_enabled = true
 region_rect = Rect2(48, 32, 48, 48)
+
+[node name="ClimbArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbArea"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_qq8q1")
+
+[connection signal="make_climbable" from="." to="." method="_on_make_climbable"]
+[connection signal="make_unclimbable" from="." to="." method="_on_make_unclimbable"]
+[connection signal="plant_tree" from="." to="." method="_on_plant_tree"]
+[connection signal="ungrow_tree" from="." to="." method="_on_ungrow_tree"]
+[connection signal="water_tree" from="." to="." method="_on_water_tree"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="ClimbArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="ClimbArea" to="." method="_on_body_exited"]
