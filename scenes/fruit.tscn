@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://0g8ixg66442l"]
+
+[ext_resource type="Script" path="res://scripts/fruit.gd" id="1_c6lpm"]
+[ext_resource type="Texture2D" path="res://assets/food_items16x16.png" id="2_4ry8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p4yv"]
+size = Vector2(4, 4)
+
+[node name="Fruit" type="CharacterBody2D"]
+collision_layer = 256
+collision_mask = 257
+script = ExtResource("1_c6lpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4ry8t")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_4p4yv")
+
+[connection signal="fruit_fall" from="." to="." method="_on_fruit_fall"]
