@@ -12,6 +12,7 @@ var direction = 0
 
 var frozen = false
 var on_planting_ground = false
+var watered = false
 var watarable_body
 
 
@@ -25,12 +26,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 	
-	if frozen:
-		collision.disabled = false
-	else:
-		collision.disabled = true
-		velocity = Vector2(0,0)
-	
 	if Globals.seasons[Globals.seasons_int] == "Winter" and !frozen:
 		freeze()
 	elif Globals.seasons[Globals.seasons_int] != "Winter" and frozen:
@@ -38,6 +33,12 @@ func _physics_process(delta: float) -> void:
 	
 	if on_planting_ground and !frozen:
 		water(watarable_body)
+	
+	if frozen:
+		collision.disabled = false
+	else:
+		collision.disabled = true
+		velocity = Vector2(0,0)
 	
 	move_and_slide()
 
@@ -85,8 +86,9 @@ func unfreeze():
 
 func water(object: Node2D):
 	EventController.interaction.emit(object)
+	watered = true
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animation.animation == "Unfreeze":
+	if animation.animation == "Unfreeze" and watered:
 		queue_free()
