@@ -1,8 +1,9 @@
 extends Node
 
 var inventory_item_paths = {	
-	"apple": "MarginContainer/Inventory frame/apple-icon",
-	"mushroom": "MarginContainer/Inventory frame/mushroom-icon"
+	"seed": "MarginContainer/Inventory frame/seed-icon",
+	"mushroom": "MarginContainer/Inventory frame/mushroom-icon",
+	"honey": "MarginContainer/Inventory frame/honey-icon"
 }
 var current_inventory_item = null
 
@@ -20,7 +21,7 @@ func _clear_inventory() -> void:
 	_set_current_inventory_item(null)
 		
 func _save_item_to_inventory(item_name="") -> void:
-	if _get_current_inventory_item() != "": # only one space in the inventory
+	if item_name != "": # only one space in the inventory
 		_clear_inventory()
 		get_node(inventory_item_paths[item_name]).visible = true
 		_set_current_inventory_item(item_name)
@@ -30,4 +31,5 @@ func _get_current_inventory_item() -> String:
 	
 func _set_current_inventory_item(item_name) -> void:
 	current_inventory_item = item_name
+	Globals.inventory_item = item_name
 	

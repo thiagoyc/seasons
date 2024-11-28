@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 			speech_bubble.visible = false
 			animated_sprite.play("running")
 			interactable_collision.disabled = true
+			small_cat.emit_signal("free_cat")
 			move_local_x(BEAR_SPEED * delta * direction)
 		else:
 			animated_sprite.play("idle")
@@ -90,4 +91,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_interaction(node: Node) -> void:
 	if node == self:
-		honey_received = true
+		if Globals.inventory_item == "honey":
+			honey_received = true
+			EventController.use_item_of_inventory.emit()
