@@ -1,0 +1,123 @@
+[gd_scene load_steps=18 format=3 uid="uid://b3yuvcpqpgxk7"]
+
+[ext_resource type="Texture2D" uid="uid://cde517ctymean" path="res://assets/Pile of Leaves/bush.png" id="1_72t3x"]
+[ext_resource type="Script" path="res://scripts/leaves.gd" id="1_wtue7"]
+[ext_resource type="Texture2D" uid="uid://fqtv1powfdeh" path="res://assets/logBurning/FireSprite.png" id="3_b84id"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pk3qy"]
+texture = ExtResource("1_72t3x")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dr3qk"]
+sources/0 = SubResource("TileSetAtlasSource_pk3qy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6bd8"]
+size = Vector2(6, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laaya"]
+size = Vector2(4, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx8it"]
+size = Vector2(4, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhoa1"]
+atlas = ExtResource("3_b84id")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0esu"]
+atlas = ExtResource("3_b84id")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd2yl"]
+atlas = ExtResource("3_b84id")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnpg7"]
+atlas = ExtResource("3_b84id")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dx47"]
+atlas = ExtResource("3_b84id")
+region = Rect2(0, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crxsn"]
+atlas = ExtResource("3_b84id")
+region = Rect2(36, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac1id"]
+atlas = ExtResource("3_b84id")
+region = Rect2(72, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3spkw"]
+atlas = ExtResource("3_b84id")
+region = Rect2(108, 36, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7sgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhoa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0esu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd2yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnpg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dx47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crxsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac1id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3spkw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="leaves" type="CharacterBody2D"]
+script = ExtResource("1_wtue7")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(4, 5)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_dr3qk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_c6bd8")
+
+[node name="Left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_laaya")
+
+[node name="Right" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_mx8it")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_b7sgm")
+frame_progress = 0.904697
+
+[connection signal="leaves_fall" from="." to="." method="_on_leaves_fall"]
+[connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]
+[connection signal="body_exited" from="Left" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]
+[connection signal="body_exited" from="Right" to="." method="_on_body_exited"]

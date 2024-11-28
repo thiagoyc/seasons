@@ -13,18 +13,31 @@ var is_dead
 var casting
 signal cast_done()
 
+var on_climbable = false
+signal is_on_climbable()
+signal not_on_climbable()
+
 func _ready():
 	is_dead = false
 	casting = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and not on_climbable:
 		velocity += get_gravity() * delta / 3
+	
+	if on_climbable:
+		if Input.is_action_pressed("up"):
+			velocity.y = -SPEED * delta * 20
+		elif Input.is_action_pressed("down"):
+			velocity.y = SPEED * delta * 20
+		elif not Input.is_action_pressed("jump"): 
+			velocity.y = 0
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not casting:
-		velocity.y = JUMP_VELOCITY
+	if ((Input.is_action_just_pressed("jump") and is_on_floor() and not casting)
+		or (Input.is_action_just_pressed("jump") and not casting and on_climbable and velocity.y == 0)):
+		velocity.y += JUMP_VELOCITY
 		jumping_sound_fx.play()
 
 	# Get the input direction and handle the movement/deceleration.
@@ -64,10 +77,23 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("sitting")
 		else:
 			animated_sprite_2d.play("running")
+	elif not is_on_floor() and on_climbable:
+		if direction == 0:
+			animated_sprite_2d.play("climbing_static")
+		else:
+			animated_sprite_2d.play("climbing_direction")
 	else:
 		animated_sprite_2d.play("jumping")
 	
 	move_and_slide()
+
+
+func _on_is_on_climbable():
+	on_climbable = true
+
+
+func _on_not_on_climbable():
+	on_climbable = false
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

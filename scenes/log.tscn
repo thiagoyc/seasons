@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://b3qpq0d4k0son"]
+
+[ext_resource type="Script" path="res://scripts/log.gd" id="1_0nn7l"]
+[ext_resource type="Texture2D" uid="uid://cv8yski7nvahe" path="res://assets/Platformer Art Complete Pack/Base pack/Tiles/bridgeLogs (1).png" id="1_k06am"]
+[ext_resource type="Texture2D" uid="uid://fqtv1powfdeh" path="res://assets/logBurning/FireSprite.png" id="2_uar4k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v08gi"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1diw"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m23oi"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gndw0"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0lkj"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(0, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmo3l"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(36, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8m7n"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(72, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mfgr"]
+atlas = ExtResource("2_uar4k")
+region = Rect2(108, 36, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmcsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v08gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1diw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m23oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gndw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0lkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmo3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8m7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mfgr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppe0p"]
+size = Vector2(70, 21.75)
+
+[node name="Log" type="Node2D" groups=["Flamable"]]
+script = ExtResource("1_0nn7l")
+
+[node name="BridgeLogs(1)" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_k06am")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1, 15)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_jmcsv")
+frame = 7
+frame_progress = 1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_ppe0p")

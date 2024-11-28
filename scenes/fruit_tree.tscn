@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbojop88oj01n"]
+[gd_scene load_steps=8 format=3 uid="uid://dph5md47ihaps"]
 
-[ext_resource type="Texture2D" uid="uid://jg1wxdv7peig" path="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png" id="1_03r2g"]
+[ext_resource type="Texture2D" uid="uid://c3e06g8u83x5w" path="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png" id="1_03r2g"]
 [ext_resource type="Script" path="res://scripts/fruit_tree.gd" id="1_xk7mq"]
-[ext_resource type="PackedScene" uid="uid://0g8ixg66442l" path="res://scenes/fruit.tscn" id="2_iql07"]
-[ext_resource type="PackedScene" uid="uid://cfvelpwc86kq8" path="res://scenes/squirrel.tscn" id="4_5losm"]
+[ext_resource type="PackedScene" uid="uid://cokkv2soxrswr" path="res://scenes/fruit.tscn" id="2_iql07"]
+[ext_resource type="PackedScene" uid="uid://drorroyo8xc03" path="res://scenes/squirrel.tscn" id="4_5losm"]
 [ext_resource type="Script" path="res://scripts/squirrel.gd" id="5_c6h8n"]
-[ext_resource type="Texture2D" path="res://assets/food_items16x16.png" id="6_qvebr"]
+[ext_resource type="Texture2D" uid="uid://cpuj3ya1lrqm7" path="res://assets/food_items16x16.png" id="6_qvebr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqlhy"]
 size = Vector2(130, 46)
