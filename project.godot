@@ -32,6 +32,8 @@ SeasonAffected=""
 Player=""
 Flamable=""
 Waterable=""
+Cave=""
+SmallCat=""
 
 [input]
 

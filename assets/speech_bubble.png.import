@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6c3b5p4p3rb2"
-path="res://.godot/imported/rock_cave.png-ff55bc6f174f720d0cf5f82c30c5d223.ctex"
+uid="uid://djgigbl1ex2ha"
+path="res://.godot/imported/speech_bubble.png-11586dd372c093728daaea5b050d56c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rock_cave.png"
-dest_files=["res://.godot/imported/rock_cave.png-ff55bc6f174f720d0cf5f82c30c5d223.ctex"]
+source_file="res://assets/speech_bubble.png"
+dest_files=["res://.godot/imported/speech_bubble.png-11586dd372c093728daaea5b050d56c6.ctex"]
 
 [params]
 

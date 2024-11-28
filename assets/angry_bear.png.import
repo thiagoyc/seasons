@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwcus67cabc55"
-path="res://.godot/imported/angry_bear_icon.png-2d0fd929b9437e4336a3e29c74a94214.ctex"
+uid="uid://yu4pbk67mgjv"
+path="res://.godot/imported/angry_bear.png-eedcc7673f7b1d4c6c62c99c921d3816.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/angry_bear_icon.png"
-dest_files=["res://.godot/imported/angry_bear_icon.png-2d0fd929b9437e4336a3e29c74a94214.ctex"]
+source_file="res://assets/angry_bear.png"
+dest_files=["res://.godot/imported/angry_bear.png-eedcc7673f7b1d4c6c62c99c921d3816.ctex"]
 
 [params]
 

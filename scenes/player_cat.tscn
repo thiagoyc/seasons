@@ -316,26 +316,15 @@ z_index = 10
 script = ExtResource("1_4hadv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -8)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_ndsvm")
-animation = &"climbing_direction"
-autoplay = "running"
+animation = &"sitting"
+autoplay = "sitting"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_qmlwu")
-
-[node name="Jumping" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_3o1i0")
-volume_db = -2.0
-
-[node name="walking-leaves" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_0q5fy")
-volume_db = -2.0
-
-[node name="Cracking-earthquake" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_637ep")
 
 [node name="Jumping" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3o1i0")

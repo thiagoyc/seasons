@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bymi5612kuehw"]
+
+[ext_resource type="Texture2D" uid="uid://dufss1m6oj3m5" path="res://assets/cave.png" id="1_jxuaf"]
+
+[node name="Cave" type="Node2D" groups=["Cave"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -72)
+texture = ExtResource("1_jxuaf")

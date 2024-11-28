@@ -24,7 +24,7 @@ func _on_interaction(node: Node) -> void:
 			spawn_bees()
 		# Pega mel se for outono
 		elif Globals.seasons[Globals.seasons_int] == "Autumn":
-			pass
+			print("Você pegou mel!")
 
 
 func spawn_bees():
