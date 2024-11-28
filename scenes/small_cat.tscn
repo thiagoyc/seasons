@@ -40,4 +40,4 @@ shape = SubResource("CircleShape2D_ygteh")
 [node name="Interactable" parent="." instance=ExtResource("3_71lq1")]
 position = Vector2(0, -10)
 scale = Vector2(2.88, 1)
-label = "para salvar o JuniorJogo"
+label = "para salvar o Junior"
