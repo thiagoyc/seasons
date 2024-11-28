@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c285lu5huks8g"]
+
+[ext_resource type="Script" path="res://scripts/planting_ground.gd" id="1_keqgt"]
+[ext_resource type="Texture2D" uid="uid://rusq3hq84n6t" path="res://assets/Seasons pack/Autumn/Ground/Ground_Autumn.png" id="1_kppav"]
+[ext_resource type="PackedScene" uid="uid://o20r6v53eajm" path="res://scenes/interactable.tscn" id="2_5fk2b"]
+[ext_resource type="PackedScene" uid="uid://bxnmkeh37e3av" path="res://scenes/tree.tscn" id="3_s4uyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncfra"]
+size = Vector2(10, 0)
+
+[node name="PlantingGround" type="Node2D"]
+script = ExtResource("1_keqgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kppav")
+region_enabled = true
+region_rect = Rect2(37, 0, 9, 2)
+
+[node name="Interactable" parent="." instance=ExtResource("2_5fk2b")]
+label = "para plantar a árvore"
+
+[node name="Tree" parent="." instance=ExtResource("3_s4uyy")]
+position = Vector2(0, -23)
+
+[node name="WaterArea" type="StaticBody2D" parent="." groups=["Waterable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ncfra")

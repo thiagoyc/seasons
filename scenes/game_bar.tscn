@@ -1,4 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://coldx2el5dn6m"]
+[gd_scene load_steps=11 format=3 uid="uid://coldx2el5dn6m"]
+[gd_scene load_steps=11 format=3 uid="uid://coldx2el5dn6m"]
 
 [ext_resource type="Texture2D" uid="uid://dxsg76tyxiujk" path="res://assets/UI/season/seasons-1.png" id="1_3jcai"]
 [ext_resource type="Script" path="res://scripts/season_icons.gd" id="2_p1hra"]

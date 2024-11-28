@@ -116,6 +116,7 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_b7sgm")
 frame_progress = 0.904697
 
+[connection signal="leaves_fall" from="." to="." method="_on_leaves_fall"]
 [connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]
 [connection signal="body_exited" from="Left" to="." method="_on_body_exited"]
 [connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]

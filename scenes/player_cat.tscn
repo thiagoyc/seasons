@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dlkshbyhqimfb"]
+[gd_scene load_steps=44 format=3 uid="uid://dlkshbyhqimfb"]
 
 [ext_resource type="Script" path="res://scripts/player_cat.gd" id="1_4hadv"]
 [ext_resource type="Texture2D" uid="uid://b2xuyv8hbxs8i" path="res://assets/Cats/blue_0.png" id="2_8axwe"]
@@ -85,6 +85,14 @@ region = Rect2(832, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vlic"]
 atlas = ExtResource("2_8axwe")
 region = Rect2(864, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx6gv"]
+atlas = ExtResource("2_8axwe")
+region = Rect2(160, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g83pt"]
+atlas = ExtResource("2_8axwe")
+region = Rect2(192, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tng5j"]
 atlas = ExtResource("2_8axwe")
@@ -211,6 +219,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lx6gv")
+}],
+"loop": true,
+"name": &"climbing_direction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g83pt")
+}],
+"loop": true,
+"name": &"climbing_static",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tng5j")
 }],
 "loop": true,
@@ -294,7 +318,7 @@ script = ExtResource("1_4hadv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_ndsvm")
-animation = &"begging"
+animation = &"climbing_direction"
 autoplay = "running"
 flip_h = true
 
@@ -313,4 +337,17 @@ volume_db = -2.0
 [node name="Cracking-earthquake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_637ep")
 
+[node name="Jumping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3o1i0")
+volume_db = -2.0
+
+[node name="walking-leaves" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0q5fy")
+volume_db = -2.0
+
+[node name="Cracking-earthquake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_637ep")
+
+[connection signal="is_on_climbable" from="." to="." method="_on_is_on_climbable"]
+[connection signal="not_on_climbable" from="." to="." method="_on_not_on_climbable"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
