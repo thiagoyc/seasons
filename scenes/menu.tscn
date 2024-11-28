@@ -1,7 +1,7 @@
-[gd_scene load_steps=77 format=4 uid="uid://bbhf4cnl37lww"]
+[gd_scene load_steps=76 format=4 uid="uid://bg0kysb1vkgmt"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_kprx7"]
-[ext_resource type="Theme" uid="uid://dkkhcf10xrenj" path="res://scenes/seasons_hud.tres" id="2_77pch"]
+[ext_resource type="Theme" uid="uid://cuapcy8mkua4w" path="res://scenes/seasons_hud.tres" id="2_77pch"]
 [ext_resource type="Texture2D" uid="uid://df01y3c1cp77u" path="res://assets/Seasons pack/Palette/BubbleGum16.png" id="2_ens1e"]
 [ext_resource type="Texture2D" uid="uid://3bvdvbignmyr" path="res://assets/Seasons pack/Miscellaneous/Clouds/Cloud_1.png" id="3_6x81i"]
 [ext_resource type="AudioStream" uid="uid://dcv5pg3wn2ikx" path="res://assets/music/Danosongs-Mars-And-Stars-edited.mp3" id="4_bbgtr"]
@@ -1000,10 +1000,12 @@ script = ExtResource("14_8esdm")
 stream = ExtResource("4_bbgtr")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="Pressing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ucffb")
 volume_db = -2.0
+bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

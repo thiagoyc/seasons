@@ -329,13 +329,16 @@ shape = SubResource("CircleShape2D_qmlwu")
 [node name="Jumping" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3o1i0")
 volume_db = -2.0
+bus = &"SFX"
 
 [node name="walking-leaves" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_0q5fy")
 volume_db = -2.0
+bus = &"SFX"
 
 [node name="Cracking-earthquake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_637ep")
+bus = &"SFX"
 
 [connection signal="is_on_climbable" from="." to="." method="_on_is_on_climbable"]
 [connection signal="not_on_climbable" from="." to="." method="_on_not_on_climbable"]

@@ -27,9 +27,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta / 3
 	
 	if on_climbable:
-		if Input.is_action_pressed("up"):
+		if Input.is_action_pressed("move_up"):
 			velocity.y = -SPEED * delta * 20
-		elif Input.is_action_pressed("down"):
+		elif Input.is_action_pressed("move_down"):
 			velocity.y = SPEED * delta * 20
 		elif not Input.is_action_pressed("jump"): 
 			velocity.y = 0

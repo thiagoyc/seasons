@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://mb6jobfhytb1"]
+
+[ext_resource type="Script" path="res://scenes/options_menu.gd" id="1_ktw4u"]
+[ext_resource type="Theme" uid="uid://cuapcy8mkua4w" path="res://scenes/seasons_hud.tres" id="1_r0i3w"]
+[ext_resource type="AudioStream" uid="uid://c5050h6ego0vk" path="res://assets/music/fx/jump.wav" id="3_kiebb"]
+
+[sub_resource type="Theme" id="Theme_74h72"]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+script = ExtResource("1_ktw4u")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = -217.5
+offset_right = 253.0
+offset_bottom = 217.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_r0i3w")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_r0i3w")
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_74h72")
+theme_override_constants/separation = 0
+
+[node name="Button" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("1_r0i3w")
+text = "Teste"
+
+[node name="Button2" type="Button" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("1_r0i3w")
+text = "Teste"
+
+[node name="Pressing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kiebb")
+volume_db = -2.0
