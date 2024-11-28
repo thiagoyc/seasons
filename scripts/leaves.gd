@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var fire_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var killzone: CollisionShape2D = $Killzone/CollisionShape2D
 
 const SPEED = 1500.0
 
@@ -24,6 +25,7 @@ var flamable_body
 func _ready():
 	initial_position = global_position
 	collision.disabled = true
+	killzone.disabled = true
 
 
 func _physics_process(delta: float) -> void:
@@ -93,6 +95,7 @@ func start_burning():
 	can_delete = true
 	fire_sprite.visible = true
 	fire_sprite.play()
+	killzone.disabled = false
 
 
 func stop_burning():
@@ -100,6 +103,7 @@ func stop_burning():
 	can_delete = false
 	fire_sprite.visible = false
 	fire_sprite.stop()
+	killzone.disabled = true
 
 
 func set_on_fire(object: Node2D):

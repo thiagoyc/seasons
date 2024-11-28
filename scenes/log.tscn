@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3qpq0d4k0son"]
+[gd_scene load_steps=16 format=3 uid="uid://b3qpq0d4k0son"]
 
 [ext_resource type="Script" path="res://scripts/log.gd" id="1_0nn7l"]
 [ext_resource type="Texture2D" uid="uid://cv8yski7nvahe" path="res://assets/Platformer Art Complete Pack/Base pack/Tiles/bridgeLogs (1).png" id="1_k06am"]
 [ext_resource type="Texture2D" uid="uid://fqtv1powfdeh" path="res://assets/logBurning/FireSprite.png" id="2_uar4k"]
+[ext_resource type="PackedScene" uid="uid://00quo2voifxq" path="res://scenes/killzone.tscn" id="4_ps5xf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v08gi"]
 atlas = ExtResource("2_uar4k")
@@ -71,6 +72,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppe0p"]
 size = Vector2(70, 21.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egca3"]
+size = Vector2(74, 25)
+
 [node name="Log" type="Node2D" groups=["Flamable"]]
 script = ExtResource("1_0nn7l")
 
@@ -92,3 +96,9 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_ppe0p")
+
+[node name="Killzone" parent="." instance=ExtResource("4_ps5xf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_egca3")

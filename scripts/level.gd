@@ -3,6 +3,8 @@ extends Node2D
 @onready var midground: TileMapLayer = $Midground
 
 @onready var game_bar: Control = $"UI Manager/GameBar"
+@onready var victory: Control = $"UI Manager/Victory"
+@onready var defeat: Control = $"UI Manager/Defeat"
 
 
 const season_textures = [
@@ -23,6 +25,8 @@ var last_i
 func _ready():
 	last_i = -1
 	update_terrain()
+	victory.visible = false
+	defeat.visible = false
 
 
 func _process(_delta: float) -> void:
@@ -30,6 +34,12 @@ func _process(_delta: float) -> void:
 		last_i = Globals.seasons_int
 		update_terrain()
 	
+	if Globals.won:
+		victory.emit_signal("show_self")
+		
+	if Globals.lost:
+		defeat.emit_signal("show_self")
+
 
 func update_terrain() -> void:
 	# Ground texture

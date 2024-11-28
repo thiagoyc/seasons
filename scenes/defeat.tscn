@@ -1,0 +1,292 @@
+[gd_scene load_steps=27 format=3 uid="uid://tdfd0c02drui"]
+
+[ext_resource type="Theme" uid="uid://dkkhcf10xrenj" path="res://scenes/seasons_hud.tres" id="1_eclod"]
+[ext_resource type="Script" path="res://scripts/defeat.gd" id="1_rnh4d"]
+[ext_resource type="AudioStream" uid="uid://c5050h6ego0vk" path="res://assets/music/fx/jump.wav" id="2_kxwbl"]
+[ext_resource type="Texture2D" uid="uid://b2xuyv8hbxs8i" path="res://assets/Cats/blue_0.png" id="3_k5hfd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qg1d"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(768, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi1f3"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(800, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5flq4"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(832, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgo7r"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(864, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qfwu"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(768, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gg88"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(800, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbg3y"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(832, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo87i"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(864, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsy86"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(768, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd6ye"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(800, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4rj7"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(832, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lol4r"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(864, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12t2v"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(768, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q7jf"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(800, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6qdf"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(832, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or3sp"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(864, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_883is"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(768, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utl2p"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(800, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m346w"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(832, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwqhp"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(864, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flo8j"]
+atlas = ExtResource("3_k5hfd")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1sqg0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qg1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi1f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5flq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgo7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qfwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gg88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbg3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo87i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsy86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd6ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4rj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lol4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12t2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q7jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6qdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or3sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_883is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utl2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m346w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwqhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flo8j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Defeat" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rnh4d")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -247.5
+offset_right = 346.0
+offset_bottom = 247.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_eclod")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Suas vidas se foram 
+como folhas no outono.
+
+Junior continua perdido..."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AgainButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+text = "TENTAR
+
+NOVAMENTE"
+
+[node name="MenuButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "MENU"
+
+[node name="PlayerCat" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+position = Vector2(283, -262)
+rotation = 0.0872665
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1sqg0")
+frame_progress = 0.889867
+
+[node name="Pressing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kxwbl")
+volume_db = -2.0
+
+[connection signal="hide_self" from="." to="." method="_on_hide_self"]
+[connection signal="show_self" from="." to="." method="_on_show_self"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/AgainButton" to="." method="_on_again_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

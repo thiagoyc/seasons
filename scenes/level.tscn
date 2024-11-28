@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bl6pd72xku0jf"]
+[gd_scene load_steps=44 format=4 uid="uid://bl6pd72xku0jf"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cb4yq"]
 [ext_resource type="PackedScene" uid="uid://dlkshbyhqimfb" path="res://scenes/player_cat.tscn" id="1_ckk63"]
@@ -20,7 +20,9 @@
 [ext_resource type="AudioStream" uid="uid://dcv5pg3wn2ikx" path="res://assets/music/Danosongs-Mars-And-Stars-edited.mp3" id="15_j4w06"]
 [ext_resource type="PackedScene" uid="uid://00quo2voifxq" path="res://scenes/killzone.tscn" id="15_n0xte"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="15_uitfq"]
+[ext_resource type="PackedScene" uid="uid://bodpsfcggxhd5" path="res://scenes/victory.tscn" id="15_ulwxs"]
 [ext_resource type="PackedScene" uid="uid://cleo45mnjigi8" path="res://scenes/ice_block.tscn" id="16_2wfs4"]
+[ext_resource type="PackedScene" uid="uid://tdfd0c02drui" path="res://scenes/defeat.tscn" id="16_f5pwr"]
 [ext_resource type="PackedScene" uid="uid://dph5md47ihaps" path="res://scenes/fruit_tree.tscn" id="16_kcncs"]
 [ext_resource type="PackedScene" uid="uid://c285lu5huks8g" path="res://scenes/planting_ground.tscn" id="23_4bkf5"]
 [ext_resource type="PackedScene" uid="uid://bvhtk8d44bf46" path="res://scenes/bear.tscn" id="24_ibrml"]
@@ -319,7 +321,7 @@ visibility_layer = 3
 script = ExtResource("1_cb4yq")
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_ckk63")]
-position = Vector2(-490, 0)
+position = Vector2(148, -40)
 scale = Vector2(0.5, 0.5)
 collision_layer = 3
 
@@ -376,6 +378,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Defeat" parent="UI Manager" instance=ExtResource("16_f5pwr")]
+
+[node name="Victory" parent="UI Manager" instance=ExtResource("15_ulwxs")]
 
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("15_uitfq")
