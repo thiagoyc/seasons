@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dkkhcf10xrenj"]
+
+[ext_resource type="FontFile" uid="uid://niv78frh3uc4" path="res://assets/UI/Menu/MinimalPixel v2.ttf" id="1_hr2rb"]
+[ext_resource type="StyleBox" uid="uid://bux1cn13kedvd" path="res://styles/button.tres" id="2_picml"]
+[ext_resource type="Texture2D" uid="uid://bi3jrfkjt4hsk" path="res://assets/UI/Menu/Panel.png" id="3_1uvci"]
+
+[sub_resource type="FontVariation" id="FontVariation_lt32w"]
+base_font = ExtResource("1_hr2rb")
+
+[sub_resource type="FontVariation" id="FontVariation_6owbh"]
+base_font = ExtResource("1_hr2rb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kmtft"]
+content_margin_left = 100.0
+content_margin_top = 80.0
+content_margin_right = 100.0
+content_margin_bottom = 60.0
+texture = ExtResource("3_1uvci")
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = SubResource("FontVariation_lt32w")
+Button/styles/disabled = ExtResource("2_picml")
+Button/styles/focus = ExtResource("2_picml")
+Button/styles/hover = ExtResource("2_picml")
+Button/styles/normal = ExtResource("2_picml")
+Button/styles/pressed = ExtResource("2_picml")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 48
+Label/fonts/font = SubResource("FontVariation_6owbh")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_kmtft")
+VBoxContainer/constants/separation = 36
