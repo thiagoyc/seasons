@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bl6pd72xku0jf"]
+[gd_scene load_steps=38 format=4 uid="uid://bl6pd72xku0jf"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cb4yq"]
 [ext_resource type="PackedScene" uid="uid://dlkshbyhqimfb" path="res://scenes/player_cat.tscn" id="1_ckk63"]
@@ -14,13 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://6s77id1wiviv" path="res://assets/water.png" id="10_4dx1k"]
 [ext_resource type="Texture2D" uid="uid://d2ru1pslbubwr" path="res://assets/ice.png" id="10_7n23h"]
 [ext_resource type="Script" path="res://scripts/interaction_ui.gd" id="11_a0xcn"]
-[ext_resource type="AudioStream" uid="uid://dcv5pg3wn2ikx" path="res://assets/music/Danosongs-Mars-And-Stars-edited.mp3" id="15_j4w06"]
-[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="15_uitfq"]
 [ext_resource type="PackedScene" uid="uid://b3qpq0d4k0son" path="res://scenes/log.tscn" id="12_hd2db"]
 [ext_resource type="PackedScene" uid="uid://bxnmkeh37e3av" path="res://scenes/tree.tscn" id="13_2ok62"]
 [ext_resource type="PackedScene" uid="uid://b3yuvcpqpgxk7" path="res://scenes/leaves.tscn" id="14_5im2n"]
 [ext_resource type="PackedScene" uid="uid://c1xpsw2pgqi02" path="res://scenes/mushroom.tscn" id="15_ifyvv"]
+[ext_resource type="AudioStream" uid="uid://dcv5pg3wn2ikx" path="res://assets/music/Danosongs-Mars-And-Stars-edited.mp3" id="15_j4w06"]
 [ext_resource type="PackedScene" uid="uid://00quo2voifxq" path="res://scenes/killzone.tscn" id="15_n0xte"]
+[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="15_uitfq"]
 [ext_resource type="PackedScene" uid="uid://cleo45mnjigi8" path="res://scenes/ice_block.tscn" id="16_2wfs4"]
 [ext_resource type="PackedScene" uid="uid://dph5md47ihaps" path="res://scenes/fruit_tree.tscn" id="16_kcncs"]
 
@@ -379,6 +379,7 @@ script = ExtResource("15_uitfq")
 stream = ExtResource("15_j4w06")
 volume_db = -10.0
 autoplay = true
+
 [node name="Killzone" parent="." instance=ExtResource("15_n0xte")]
 position = Vector2(-280, 17)
 

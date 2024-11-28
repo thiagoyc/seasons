@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://coldx2el5dn6m"]
+[gd_scene load_steps=14 format=3 uid="uid://coldx2el5dn6m"]
 
 [ext_resource type="Texture2D" uid="uid://dxsg76tyxiujk" path="res://assets/UI/season/seasons-1.png" id="1_3jcai"]
 [ext_resource type="Script" path="res://scripts/season_icons.gd" id="2_p1hra"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dbx0jbvs1xd3u" path="res://assets/UI/season/seasons-4.png" id="5_hsy0y"]
 [ext_resource type="Texture2D" uid="uid://btddrvalf7o3y" path="res://assets/UI/blue_face.png" id="6_x0752"]
 [ext_resource type="Script" path="res://scripts/life_counter.gd" id="7_1p8ls"]
+[ext_resource type="Script" path="res://scenes/inventory.gd" id="8_78f8u"]
+[ext_resource type="Texture2D" uid="uid://dd6wq6qvghaim" path="res://assets/UI/inventory/inventory.png" id="8_bkvic"]
+[ext_resource type="Texture2D" uid="uid://cpuj3ya1lrqm7" path="res://assets/food_items16x16.png" id="9_n1cod"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emsmm"]
 bg_color = Color(0.886275, 0.862745, 0.803922, 0)
@@ -52,13 +55,13 @@ theme_override_constants/margin_bottom = 10
 [node name="Seasons Icons" type="Control" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer/Seasons Icons"]
+[node name="Seasons" type="Panel" parent="MarginContainer/Seasons Icons"]
 layout_mode = 0
 offset_right = 275.0
 offset_bottom = 80.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_emsmm")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Seasons Icons/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Seasons Icons/Seasons"]
 layout_mode = 0
 offset_right = 300.0
 offset_bottom = 75.0
@@ -67,12 +70,12 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Seasons Icons/Panel/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Seasons Icons/Seasons/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Season 1" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
+[node name="Season 1" type="TextureRect" parent="MarginContainer/Seasons Icons/Seasons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("1_3jcai")
@@ -80,7 +83,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_p1hra")
 
-[node name="Season 2" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
+[node name="Season 2" type="TextureRect" parent="MarginContainer/Seasons Icons/Seasons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("3_n3108")
@@ -88,7 +91,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_p1hra")
 
-[node name="Season 3" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
+[node name="Season 3" type="TextureRect" parent="MarginContainer/Seasons Icons/Seasons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("4_1gg48")
@@ -96,7 +99,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_p1hra")
 
-[node name="Season 4" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel/MarginContainer/HBoxContainer"]
+[node name="Season 4" type="TextureRect" parent="MarginContainer/Seasons Icons/Seasons/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_hsy0y")
@@ -104,7 +107,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_p1hra")
 
-[node name="Panel2" type="Panel" parent="MarginContainer/Seasons Icons"]
+[node name="Life counter" type="Panel" parent="MarginContainer/Seasons Icons"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -114,7 +117,7 @@ offset_bottom = 80.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_f260r")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Seasons Icons/Panel2"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Seasons Icons/Life counter"]
 layout_mode = 0
 offset_right = 66.0
 offset_bottom = 80.0
@@ -123,20 +126,56 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Seasons Icons/Panel2/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Seasons Icons/Life counter/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Cat head" type="TextureRect" parent="MarginContainer/Seasons Icons/Panel2/MarginContainer/HBoxContainer"]
+[node name="Cat head" type="TextureRect" parent="MarginContainer/Seasons Icons/Life counter/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("6_x0752")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Life counter" type="Label" parent="MarginContainer/Seasons Icons/Panel2/MarginContainer/HBoxContainer"]
+[node name="Life counter" type="Label" parent="MarginContainer/Seasons Icons/Life counter/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "7"
 label_settings = SubResource("LabelSettings_b3qfy")
 script = ExtResource("7_1p8ls")
+
+[node name="Inventory" type="Panel" parent="MarginContainer/Seasons Icons"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 118.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f260r")
+script = ExtResource("8_78f8u")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Seasons Icons/Inventory"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -54.0
+offset_right = 135.0
+offset_bottom = 96.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Inventory frame" type="TextureRect" parent="MarginContainer/Seasons Icons/Inventory/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("8_bkvic")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="apple-icon" type="Sprite2D" parent="MarginContainer/Seasons Icons/Inventory/MarginContainer/Inventory frame"]
+position = Vector2(58, 74)
+scale = Vector2(3, 3)
+texture = ExtResource("9_n1cod")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
