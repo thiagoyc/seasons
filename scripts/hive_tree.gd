@@ -9,6 +9,7 @@ extends Node2D
 @onready var bee_2: AnimatedSprite2D = $Path2D2/PathFollow2D/Bee/AnimatedSprite2D
 @onready var path_follow_3: PathFollow2D = $Path2D3/PathFollow2D
 @onready var bee_3: AnimatedSprite2D = $Path2D3/PathFollow2D/Bee/AnimatedSprite2D
+@onready var interactable_collision: CollisionShape2D = $Tree/Hive/Interactable/CollisionShape2D
 
 var last_id
 
@@ -32,6 +33,7 @@ func _process(_delta: float) -> void:
 		if Globals.seasons[Globals.seasons_int] == "Winter":
 			hive.texture = load("res://assets/bee_hive.png")
 		else:
+			interactable_collision.disabled = false
 			hive.texture = load("res://assets/bee_hive_full.png")
 		
 		# Abelhas e flores

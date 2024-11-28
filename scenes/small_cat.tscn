@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1dcsp3osopnu"]
+[gd_scene load_steps=7 format=3 uid="uid://c1dcsp3osopnu"]
 
 [ext_resource type="Texture2D" uid="uid://b6lgcpdlc8bk3" path="res://assets/Cats/brown_1.png" id="1_o7507"]
+[ext_resource type="Script" path="res://scripts/small_cat.gd" id="1_pyneb"]
+[ext_resource type="PackedScene" uid="uid://o20r6v53eajm" path="res://scenes/interactable.tscn" id="3_71lq1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hphl1"]
 atlas = ExtResource("1_o7507")
@@ -23,6 +25,7 @@ radius = 11.0
 [node name="SmallCat" type="CharacterBody2D" groups=["SmallCat"]]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_pyneb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -33,3 +36,8 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_ygteh")
+
+[node name="Interactable" parent="." instance=ExtResource("3_71lq1")]
+position = Vector2(0, -10)
+scale = Vector2(2.88, 1)
+label = "para salvar o JuniorJogo"

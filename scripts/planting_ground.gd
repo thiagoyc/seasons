@@ -26,6 +26,8 @@ func _on_interaction(node: Node) -> void:
 		water_area_collision.disabled = true
 	
 	if node == self:
-		tree.emit_signal("plant_tree")
-		tree.emit_signal("make_climbable")
-		interactable_collision.disabled = true
+		if Globals.inventory_item == "seed":
+			tree.emit_signal("plant_tree")
+			tree.emit_signal("make_climbable")
+			interactable_collision.disabled = true
+			EventController.use_item_of_inventory.emit()

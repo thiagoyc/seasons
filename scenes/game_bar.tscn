@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://coldx2el5dn6m"]
+[gd_scene load_steps=16 format=3 uid="uid://coldx2el5dn6m"]
 
 [ext_resource type="Texture2D" uid="uid://dxsg76tyxiujk" path="res://assets/UI/season/seasons-1.png" id="1_3jcai"]
 [ext_resource type="Script" path="res://scripts/season_icons.gd" id="2_p1hra"]
@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dbx0jbvs1xd3u" path="res://assets/UI/season/seasons-4.png" id="5_hsy0y"]
 [ext_resource type="Texture2D" uid="uid://btddrvalf7o3y" path="res://assets/UI/blue_face.png" id="6_x0752"]
 [ext_resource type="Script" path="res://scripts/life_counter.gd" id="7_1p8ls"]
-[ext_resource type="Script" path="res://scenes/inventory.gd" id="8_78f8u"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="8_78f8u"]
 [ext_resource type="Texture2D" uid="uid://dd6wq6qvghaim" path="res://assets/UI/inventory/inventory.png" id="8_bkvic"]
-[ext_resource type="Texture2D" uid="uid://cpuj3ya1lrqm7" path="res://assets/food_items16x16.png" id="9_n1cod"]
+[ext_resource type="Texture2D" uid="uid://detj8nmq2ntwc" path="res://assets/Seed/Seeds_Cereals.png" id="10_tslm0"]
 [ext_resource type="Texture2D" uid="uid://bt154ics8jx1c" path="res://assets/Platformer Art Complete Pack/Base pack/Items/mushroomBrown.png" id="11_34v1q"]
+[ext_resource type="Texture2D" uid="uid://drpe0288wxfx4" path="res://assets/itemsinsecta.png" id="12_i6kxp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emsmm"]
 bg_color = Color(0.886275, 0.862745, 0.803922, 0)
@@ -174,14 +175,23 @@ texture = ExtResource("8_bkvic")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="apple-icon" type="Sprite2D" parent="MarginContainer/Seasons Icons/Inventory/MarginContainer/Inventory frame"]
-position = Vector2(58, 74)
-scale = Vector2(3, 3)
-texture = ExtResource("9_n1cod")
+[node name="seed-icon" type="Sprite2D" parent="MarginContainer/Seasons Icons/Inventory/MarginContainer/Inventory frame"]
+position = Vector2(58, 76)
+scale = Vector2(4, 4)
+texture = ExtResource("10_tslm0")
 region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
+region_rect = Rect2(44, 139, 10, 10)
 
 [node name="mushroom-icon" type="Sprite2D" parent="MarginContainer/Seasons Icons/Inventory/MarginContainer/Inventory frame"]
+visible = false
 position = Vector2(57, 51)
 scale = Vector2(1.28571, 1.34286)
 texture = ExtResource("11_34v1q")
+
+[node name="honey-icon" type="Sprite2D" parent="MarginContainer/Seasons Icons/Inventory/MarginContainer/Inventory frame"]
+visible = false
+position = Vector2(57, 75)
+scale = Vector2(2, 2)
+texture = ExtResource("12_i6kxp")
+region_enabled = true
+region_rect = Rect2(192, 0, 32, 32)

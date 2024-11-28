@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1xpsw2pgqi02"]
+[gd_scene load_steps=4 format=3 uid="uid://c1xpsw2pgqi02"]
 
 [ext_resource type="Texture2D" uid="uid://bt154ics8jx1c" path="res://assets/Platformer Art Complete Pack/Base pack/Items/mushroomBrown.png" id="1_8ytxa"]
+[ext_resource type="Script" path="res://scenes/mushroom.gd" id="1_bhpjw"]
+[ext_resource type="PackedScene" uid="uid://o20r6v53eajm" path="res://scenes/interactable.tscn" id="3_mqooi"]
 
 [node name="Mushroom" type="Node2D"]
+script = ExtResource("1_bhpjw")
 
 [node name="MushroomBrown" type="Sprite2D" parent="."]
 texture = ExtResource("1_8ytxa")
+
+[node name="Interactable" parent="." instance=ExtResource("3_mqooi")]
+position = Vector2(-1, 9)
+scale = Vector2(-6.16437, 2.66485)
+label = "para pegar Cogumelo"
