@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3yuvcpqpgxk7"]
+[gd_scene load_steps=20 format=3 uid="uid://b3yuvcpqpgxk7"]
 
 [ext_resource type="Texture2D" uid="uid://cde517ctymean" path="res://assets/Pile of Leaves/bush.png" id="1_72t3x"]
 [ext_resource type="Script" path="res://scripts/leaves.gd" id="1_wtue7"]
 [ext_resource type="Texture2D" uid="uid://fqtv1powfdeh" path="res://assets/logBurning/FireSprite.png" id="3_b84id"]
+[ext_resource type="PackedScene" uid="uid://00quo2voifxq" path="res://scenes/killzone.tscn" id="4_e3hrp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pk3qy"]
 texture = ExtResource("1_72t3x")
@@ -84,6 +85,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0jux"]
+size = Vector2(8.75, 6.75)
+
 [node name="leaves" type="CharacterBody2D"]
 script = ExtResource("1_wtue7")
 
@@ -115,6 +119,12 @@ position = Vector2(0, -1)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_b7sgm")
 frame_progress = 0.904697
+
+[node name="Killzone" parent="." instance=ExtResource("4_e3hrp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_p0jux")
 
 [connection signal="leaves_fall" from="." to="." method="_on_leaves_fall"]
 [connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]

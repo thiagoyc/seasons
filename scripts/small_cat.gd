@@ -15,3 +15,4 @@ func _on_free_cat() -> void:
 func _on_interaction(node: Node) -> void:
 	if node == self:
 		print("YOU WON!")
+		Globals.victory()

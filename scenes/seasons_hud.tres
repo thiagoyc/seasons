@@ -18,6 +18,7 @@ content_margin_bottom = 60.0
 texture = ExtResource("3_1uvci")
 
 [resource]
+Button/constants/align_to_largest_stylebox = 0
 Button/font_sizes/font_size = 24
 Button/fonts/font = SubResource("FontVariation_lt32w")
 Button/styles/disabled = ExtResource("2_picml")
