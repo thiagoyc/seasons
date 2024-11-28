@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1dcsp3osopnu"]
+
+[ext_resource type="Texture2D" uid="uid://b6lgcpdlc8bk3" path="res://assets/Cats/brown_1.png" id="1_o7507"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hphl1"]
+atlas = ExtResource("1_o7507")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mn0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hphl1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygteh"]
+radius = 11.0
+
+[node name="SmallCat" type="CharacterBody2D" groups=["SmallCat"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_1mn0s")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_ygteh")

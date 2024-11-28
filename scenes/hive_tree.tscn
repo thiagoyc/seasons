@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://b4casw6r8q72c"]
+
+[ext_resource type="Script" path="res://scripts/hive_tree.gd" id="1_6b37g"]
+[ext_resource type="Texture2D" uid="uid://c3e06g8u83x5w" path="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png" id="1_sxsum"]
+[ext_resource type="Texture2D" uid="uid://bfrvnw7g11fej" path="res://assets/bee_hive.png" id="3_1udgb"]
+[ext_resource type="Script" path="res://scripts/hive.gd" id="4_8o5gh"]
+[ext_resource type="PackedScene" uid="uid://o20r6v53eajm" path="res://scenes/interactable.tscn" id="4_ob8hk"]
+[ext_resource type="Texture2D" uid="uid://c8rcsgw7em7t8" path="res://assets/bush.png" id="4_sm2ke"]
+[ext_resource type="PackedScene" uid="uid://83odthbnrpy6" path="res://scenes/bee.tscn" id="5_o71cb"]
+
+[sub_resource type="Curve2D" id="Curve2D_3ys0w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -30, 5, 0, 0, 0, 0, -40, 5, 0, 0, 0, 0, -55, 10, 0, 0, 0, 0, -100, 15, 0, 0, 0, 0, -120, 15, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_7yl0h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -65, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_8g1ev"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -60, 15, 0, 0, 0, 0, -110, 5, 0, 0, 0, 0, -60, -5, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="HiveTree" type="Node2D"]
+script = ExtResource("1_6b37g")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_sxsum")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Hive" type="Sprite2D" parent="Tree"]
+position = Vector2(-7, -4)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_1udgb")
+script = ExtResource("4_8o5gh")
+
+[node name="Interactable" parent="Tree/Hive" instance=ExtResource("4_ob8hk")]
+scale = Vector2(2.168, 3.3)
+label = "para interagir com Colmeia"
+
+[node name="BeeSpawner" type="Node2D" parent="Tree/Hive"]
+position = Vector2(1.667, 3.333)
+
+[node name="BeeSpawner2" type="Node2D" parent="Tree/Hive"]
+position = Vector2(3.333, -3.333)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="BeeSpawner3" type="Node2D" parent="Tree/Hive"]
+position = Vector2(-3.333, -1.667)
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Bush" type="Sprite2D" parent="."]
+position = Vector2(-33, -4)
+texture = ExtResource("4_sm2ke")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-14, -6)
+scale = Vector2(0.2, 0.2)
+curve = SubResource("Curve2D_3ys0w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0.292969, -0.0488281)
+rotates = false
+
+[node name="Bee" parent="Path2D/PathFollow2D" instance=ExtResource("5_o71cb")]
+peaceful = true
+
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(-24, -14)
+scale = Vector2(0.2, 0.2)
+curve = SubResource("Curve2D_7yl0h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+rotates = false
+
+[node name="Bee" parent="Path2D2/PathFollow2D" instance=ExtResource("5_o71cb")]
+peaceful = true
+
+[node name="Path2D3" type="Path2D" parent="."]
+position = Vector2(-20, -10)
+scale = Vector2(0.2, 0.2)
+curve = SubResource("Curve2D_8g1ev")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+rotates = false
+
+[node name="Bee" parent="Path2D3/PathFollow2D" instance=ExtResource("5_o71cb")]
+peaceful = true

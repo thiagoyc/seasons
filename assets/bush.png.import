@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djgigbl1ex2ha"
-path="res://.godot/imported/SpeechBubble.png-be37a5935304cea87af61b48a77a56f3.ctex"
+uid="uid://c8rcsgw7em7t8"
+path="res://.godot/imported/bush.png-be9d794f71fc1341282f91f838b46f45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SpeechBubble.png"
-dest_files=["res://.godot/imported/SpeechBubble.png-be37a5935304cea87af61b48a77a56f3.ctex"]
+source_file="res://assets/bush.png"
+dest_files=["res://.godot/imported/bush.png-be9d794f71fc1341282f91f838b46f45.ctex"]
 
 [params]
 

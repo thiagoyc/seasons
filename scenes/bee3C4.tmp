@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://83odthbnrpy6"]
+
+[ext_resource type="Texture2D" uid="uid://jxo020ubwn6p" path="res://assets/small_animals.png" id="1_kwwfb"]
+[ext_resource type="Script" path="res://scripts/bee.gd" id="1_nbrvd"]
+[ext_resource type="PackedScene" uid="uid://00quo2voifxq" path="res://scenes/killzone.tscn" id="3_yqscb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd4aj"]
+atlas = ExtResource("1_kwwfb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs0qc"]
+atlas = ExtResource("1_kwwfb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t6u7"]
+atlas = ExtResource("1_kwwfb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b6aal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd4aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs0qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t6u7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns1ym"]
+radius = 5.09902
+
+[node name="Bee" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_nbrvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_b6aal")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0351122
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_ns1ym")
+
+[node name="Killzone" parent="." instance=ExtResource("3_yqscb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_ns1ym")
