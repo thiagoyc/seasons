@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://dkkhcf10xrenj" path="res://scenes/seasons_hud.tres" id="2_77pch"]
 [ext_resource type="Texture2D" uid="uid://df01y3c1cp77u" path="res://assets/Seasons pack/Palette/BubbleGum16.png" id="2_ens1e"]
 [ext_resource type="Texture2D" uid="uid://3bvdvbignmyr" path="res://assets/Seasons pack/Miscellaneous/Clouds/Cloud_1.png" id="3_6x81i"]
-[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="3_xttgx"]
 [ext_resource type="AudioStream" uid="uid://dcv5pg3wn2ikx" path="res://assets/music/Danosongs-Mars-And-Stars-edited.mp3" id="4_bbgtr"]
 [ext_resource type="Texture2D" uid="uid://psgfj50xxp2w" path="res://assets/Seasons pack/Miscellaneous/Clouds/Cloud_2.png" id="4_rbe61"]
 [ext_resource type="Texture2D" uid="uid://tld1o3618gis" path="res://assets/Seasons pack/Miscellaneous/Clouds/Cloud_3.png" id="5_wr58m"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b2xuyv8hbxs8i" path="res://assets/Cats/blue_0.png" id="12_2n674"]
 [ext_resource type="AudioStream" uid="uid://c5050h6ego0vk" path="res://assets/music/fx/jump.wav" id="12_ucffb"]
 [ext_resource type="Texture2D" uid="uid://b6lgcpdlc8bk3" path="res://assets/Cats/brown_1.png" id="13_wu31x"]
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="14_8esdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xyrcg"]
 texture = ExtResource("2_ens1e")
@@ -993,7 +993,7 @@ sprite_frames = SubResource("SpriteFrames_bxank")
 frame_progress = 0.676508
 
 [node name="AudioManager" type="Node" parent="."]
-script = ExtResource("3_xttgx")
+script = ExtResource("14_8esdm")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("4_bbgtr")
