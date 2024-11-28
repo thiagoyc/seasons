@@ -1,7 +1,8 @@
 extends Node
 
 var inventory_item_paths = {	
-	"apple": "MarginContainer/Inventory frame/apple-icon"
+	"apple": "MarginContainer/Inventory frame/apple-icon",
+	"mushroom": "MarginContainer/Inventory frame/mushroom-icon"
 }
 var current_inventory_item = null
 
