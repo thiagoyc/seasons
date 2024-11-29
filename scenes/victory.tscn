@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://bodpsfcggxhd5"]
 
 [ext_resource type="Script" path="res://scripts/victory.gd" id="1_jipd4"]
-[ext_resource type="Theme" uid="uid://dkkhcf10xrenj" path="res://scenes/seasons_hud.tres" id="1_rc171"]
+[ext_resource type="Theme" uid="uid://cuapcy8mkua4w" path="res://scenes/seasons_hud.tres" id="1_rc171"]
 [ext_resource type="Texture2D" uid="uid://b6lgcpdlc8bk3" path="res://assets/Cats/brown_1.png" id="3_3iwyj"]
 [ext_resource type="AudioStream" uid="uid://c5050h6ego0vk" path="res://assets/music/fx/jump.wav" id="3_bxr4m"]
 
