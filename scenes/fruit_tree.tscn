@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dph5md47ihaps"]
+[gd_scene load_steps=9 format=3 uid="uid://dph5md47ihaps"]
 
 [ext_resource type="Texture2D" uid="uid://c3e06g8u83x5w" path="res://assets/Seasons pack/Summer/Trees/Trees_Summer.png" id="1_03r2g"]
 [ext_resource type="Script" path="res://scripts/fruit_tree.gd" id="1_xk7mq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drorroyo8xc03" path="res://scenes/squirrel.tscn" id="4_5losm"]
 [ext_resource type="Script" path="res://scripts/squirrel.gd" id="5_c6h8n"]
 [ext_resource type="Texture2D" uid="uid://cpuj3ya1lrqm7" path="res://assets/food_items16x16.png" id="6_qvebr"]
+[ext_resource type="Texture2D" uid="uid://bt154ics8jx1c" path="res://assets/Platformer Art Complete Pack/Base pack/Items/mushroomBrown.png" id="7_616f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqlhy"]
 size = Vector2(80, 46)
@@ -27,11 +28,16 @@ position = Vector2(49, 0)
 script = ExtResource("5_c6h8n")
 
 [node name="HoldingFruit" type="Sprite2D" parent="Squirrel"]
-visible = false
 position = Vector2(-5, -4)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_qvebr")
 region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="HoldingMushroom" type="Sprite2D" parent="Squirrel"]
+position = Vector2(-5, -7)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("7_616f0")
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var holding_fruit: Sprite2D = $HoldingFruit
 @onready var interactable_collision: CollisionShape2D = $Interactable/CollisionShape2D
 @onready var speech_bubble: Sprite2D = $SpeechBubble
+@onready var holding_mushroom: Sprite2D = $HoldingMushroom
 
 const speed = 60
 var direction = 1
@@ -25,11 +26,13 @@ func _ready() -> void:
 	interactable_collision.disabled = true
 	EventController.interaction.connect(_on_interaction)
 	speech_bubble.visible = false
+	holding_mushroom.visible = false
+	holding_fruit.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if seed_given:
-		animated_sprite.play("idle")
+		animated_sprite.play("holding")
 	else:
 		if activate_animation:
 			if go_to_fruit:
@@ -73,6 +76,7 @@ func _on_interaction(node: Node) -> void:
 			speech_bubble.visible = false
 			interactable_collision.disabled = true
 			holding_fruit.visible = false
+			holding_mushroom.visible = true
 			seed_given = true
 			EventController.save_item_to_inventory.emit("seed")
 			

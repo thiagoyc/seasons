@@ -5,10 +5,10 @@ extends Control
 
 
 const WINDOW_MODE_ARRAY: Array[String] = [
-	"Full-Screen",
+	"Maximized Window",
 	"Window Mode",
 	"Borderless Window",
-	"Maximized Window"
+	"Full-Screen"
 ]
 
 
