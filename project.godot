@@ -23,7 +23,7 @@ AudioManager="*res://scripts/audio_manager.gd"
 
 [display]
 
-window/size/mode=2
+window/size/mode=3
 window/size/initial_position_type=4
 
 [global_group]

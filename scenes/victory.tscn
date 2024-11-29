@@ -355,11 +355,11 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "MENU"
 
-[node name="SmallCat" type="AnimatedSprite2D" parent="."]
-position = Vector2(278, 124)
+[node name="SmallCat" type="AnimatedSprite2D" parent="PanelContainer"]
+position = Vector2(59.5, -15)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_bn0wv")
-frame_progress = 0.902566
+frame_progress = 0.0439857
 
 [node name="Pressing" type="AudioStreamPlayer" parent="."]
 process_mode = 3

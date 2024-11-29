@@ -1,6 +1,6 @@
 extends Control
 
-@onready var small_cat: AnimatedSprite2D = $"SmallCat"
+@onready var small_cat: AnimatedSprite2D = $"PanelContainer/SmallCat"
 @onready var pressing_sound_fx: AudioStreamPlayer = $Pressing
 
 signal show_self()

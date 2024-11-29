@@ -19,8 +19,9 @@ func _process(delta: float) -> void:
 func _on_menu_button_pressed() -> void:
 	pressing_sound_fx.play()
 	get_tree().paused = false
-	
 	Globals.reset_lives()
+	Globals.reset_season()
+	
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	self.visible = false
 
